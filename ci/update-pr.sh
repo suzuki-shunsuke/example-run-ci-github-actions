@@ -4,7 +4,7 @@ set -eu
 
 cd "$(dirname "$0")/.."
 
-if [ "$GITHUB_REF" = refs/heads/master ]; then
+if [ "$GITHUB_REF" != refs/heads/master ]; then
   exit 0
 fi
 
