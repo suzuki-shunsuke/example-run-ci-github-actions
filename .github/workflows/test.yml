@@ -1,0 +1,16 @@
+---
+name: CI
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install tools
+      run: bash ci/install-tools.sh
+    - name: update pr
+      run: bash ci/update-pr.sh
+    - name: merge master
+      run: bash ci/merge-master.sh
+    - name: hello
+      run: bash ci/hello.sh
