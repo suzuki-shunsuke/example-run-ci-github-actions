@@ -15,7 +15,7 @@ jobs:
     - name: update pr
       run: bash ci/update-pr.sh
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     - name: merge master
       run: bash ci/merge-master.sh
       env:
