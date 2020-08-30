@@ -8,9 +8,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: install tools
       run: bash ci/install-tools.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: update pr
       run: bash ci/update-pr.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: merge master
       run: bash ci/merge-master.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: hello
       run: bash ci/hello.sh
